@@ -12,9 +12,9 @@
 </head>
 <body>
 	<form name="frm">
-		<input type="button" value="스타일 A" onclick="JavaScript:changeColor('A')">
-		<input type="button" value="스타일 B" onclick="JavaScript:changeColor('B')">
-		<input type="button" value="스타일 C" onclick="JavaScript:changeColor('C')">
+		<input type="button" value="스타일 A" class = 'btn' >
+		<input type="button" value="스타일 B" class = 'btn'>
+		<input type="button" value="스타일 C" class = 'btn' >
 	</form>
 	<ul>
 		<li><a href="http://www.cnn.com"> 여기는 미쿡 </a></li>
@@ -27,27 +27,15 @@
 			물론, 지금은 그럴 필요가 없지만 < body > 태그 안에 넣어봤음.
 	 -->
 	<script type="text/javascript">
-		function changeColor( colorVar )   // 함수 인자에 var도 쓰면 안됨
-		{
-			
-			//alert("넘겨받은 인자값 : " + colorVar);
-			// colorVar로 넘겨받은 값에 의해 분기하고자 switch~case 문 이용이 바람직
-			switch(colorVar){
-			case 'A':
-				document.bgColor ='yellow';
-				document.fgColor ='blue';
-				break;
-			case 'B':
-				document.bgColor ='green';
-				document.fgColor ='white';
-				break;
-			case 'C':
-				document.bgColor ='red';
-				document.fgColor ='purple';
-				break;
+		
+		var btns = document.getElementsByClassName('btn');
+		var bgColors = ['green','yellow','pink'];
+		for(let i =0; i<btns.length; i++){
+			btns[i].onclick = function(){
+				document.bgColor = bgColors[i];
 			}
-			
 		}
+		consol.log(bgColors);
 	</script>
 </body>
 </html>

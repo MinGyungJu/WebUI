@@ -14,7 +14,16 @@
 	window.onload = function(){
     	document.getElementById('btn').onclick = function(){
 
- 
+    		//1. id로 찾기
+    		//var userName = document.getElementById('userName');
+    		//var userName = document.quertSelector('#userName');
+    		
+    		//2. name으로 찾기
+    		//var userName = document.frm.username;
+    		var userName = document.forms[0].username;
+    		
+    		var result = document.getElementById('result');
+ 			result.innerHTML = userName.value + "님 반갑";
     	}
     }
 </script>
