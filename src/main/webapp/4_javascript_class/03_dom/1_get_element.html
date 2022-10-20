@@ -14,9 +14,9 @@
 // 		var result = document.getElementById('result');	
 // 		result.innerHTML = '안녕'+name.value+"님!!!";		// result 뒤에 값 넣기
 	// 2. 클래스명으로 노드 얻어오기
-// 		var cname = document.getElementsByClassName('cname'); // class로 받아오기 
-// 		var result = document.getElementById('result');
-// 		result.innerHTML = '안녕'+cname[0].value+"님!!!";
+		var cname = document.getElementsByClassName('cname'); // class로 받아오기 
+		var result = document.getElementById('result');
+		result.innerHTML = '안녕'+cname[0].value+"님!!!";
 	
 	// 3. 태그명으로 노드 얻어오기 
 // 		var inputList = document.getElementsByTagName('input');
@@ -29,15 +29,15 @@
 	
 		// 4. 현재위치에서 상대적인 관계로 노드 얻어오기
 		
-		var me =document.getElementById('label');
-		var childs = me.childNodes;
-// 		alert(childs.length);
-		for(let i =0; i<childs.length; i++){
-			if(childs[i].nodeType===1 && childs[i].value==''){
-				alert(childs[i].name+'은 필수입력');
-				return;	
-			}
-		}
+// 		var me =document.getElementById('label');
+// 		var childs = me.childNodes;
+// // 		alert(childs.length);
+// 		for(let i =0; i<childs.length; i++){
+// 			if(childs[i].nodeType===1 && childs[i].value==''){
+// 				alert(childs[i].name+'은 필수입력');
+// 				return;	
+// 			}
+// 		}
 		
 		/* nodeType 프로퍼티의 반환값
 			1 -	요소 노드

@@ -5,15 +5,45 @@
 <title>Date 객체</title>
 <script type="text/javascript">	
  	
-	var d = new Date('2023/08/15');
-	document.writeln( d  + '<br/>');
-	document.writeln( d.getYear()  + '<br/>');
-	document.writeln( d.getFullYear()  + '<br/>');
-	document.writeln( d.getMonth()  + '<br/>');
-	document.writeln( d.getDate()  + '<br/>');
-	document.writeln( d.getDay()  + '<br/>');
+	var d = new Date('2023/08/13');
+	document.writeln( d  + '<br/>');//Tue Aug 15 2023 00:00:00 GMT+0900 (한국 표준시)
+	document.writeln( d.getYear()  + '<br/>');//123, X getFullYear 사용해야함
+	document.writeln( d.getFullYear()  + '<br/>');//2023, 맞는방법
+	document.writeln( d.getMonth()+1  + '<br/>');//그냥 하면 7나옴 , 먼스를 뽑을때는 +1해야함
+	document.writeln( d.getDate()  + '<br/>');//15
+	document.writeln( d.getDay()  + '<br/>');//2, 요일 , 13으로하니 0나옴, == 0은 일요일
+	
+	var today = new Date();
+	document.writeln(today+'<br/>');	//Thu Oct 20 2022 10:06:01 GMT+0900 (한국 표준시)
+	document.writeln(today.toLocaleString()+'<br/>');	//2022. 10. 20. 오전 10:06:01
+	document.writeln(today.toGMTString()+'<br/>');	//Thu, 20 Oct 2022 01:06:01 GMT
+	document.writeln(today.toDateString()+'<br/>');	//Thu Oct 20 2022
 
-
+	document.writeln('<hr/>');
+	var day = new Date();
+	day.setFullYear(2025);
+	day.setMonth(5-1);
+	day.setDate(12);
+	document.writeln(day.toDateString() + '<br/>');
+	
+	var today = new Date();
+	today.setMonth(today.getMonth()-3);
+	document.writeln(today.toDateString() + '<br/>');
+	
+	// 현재날짜에서 20일을 더하면
+	today.setDate(today.getDate()+20);
+	document.writeln(today.toDateString() + '<br/>');
+	
+	document.writeln('<hr/>');
+	document.writeln(today.toDateString()+ '<br/>');
+	
+	//해당달의1일로지정
+	today.setDate(1);
+	document.writeln(today.toDateString()+ '<br/>');
+	
+	//위 결과에 0을 줄경우 전달의 마지막일 나옴
+	today.setDate(0);
+	document.writeln(today.toDateString()+ '<br/>');
 	
 	
 	

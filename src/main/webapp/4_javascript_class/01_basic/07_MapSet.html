@@ -12,6 +12,21 @@ m.set('script','2222');
 m.set('nodejs', '2222');
 m.set('java','3333');
 
+//for in : 인덱스를 추출
+
+//for of : 요소를 추출
+for(let k of m ){
+	document.write(k[0]+'/'+k[1]+'<br/>');
+}
+
+for(let [k,v] of m ){
+	document.write(k+'/'+v+'<br/>');
+}
+
+//안먹음
+// for(let k in m){
+// 	document.write(k+'<br/>');
+// }
 
 
 
@@ -34,6 +49,29 @@ s.add('tiger');
 s.add('dog');
 s.add('lion');
 s.add('dog');
+
+for(let k of s){
+	document.write(k+'<br/>');
+}
+
+for(let k of s){
+	document.write(k[0]+'<br/>');
+}
+
+// for(let k in s){
+// 	document.write(k+'<br/>');
+// }
+
+//[로또]
+let lotto = new Set();
+while(lotto.size<6){
+	//랜덤수를 추출하여 set에 추가
+	var su = parseInt(Math.random()*45)+1;
+	lotto.add(su)
+	}
+for(let k of lotto){
+	document.write(k+'/');
+}
 
 
 </script>
