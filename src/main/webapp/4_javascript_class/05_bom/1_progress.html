@@ -14,7 +14,13 @@
 	var progress = document.getElementById("progress");
 	var current = 0;
 
+	//setInterval(updateProgress, 100)
+	//setTimeout(updateProgress, 2000)
+
 	
+	setInterval(function (){
+ 							progress.value = ++current;
+	 						}, 100)
 	
 	
 
