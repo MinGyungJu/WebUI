@@ -3,6 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>광고페이지</title>
+<!-- 제이쿼리라이브러리 -->
+<script type="text/javascript"   src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<!-- 쿠키플러그인 -->
+<script type="text/javascript"   src="js/jquery.cookie.js"></script>
+<!-- 우리가쓸 스크립트 -->
+<script type="text/javascript">
+	
+ $(function(){
+ 	$('#closeWin').click(function(){
+ 		var chk = $('input[type="checkbox"]').is(':checked');
+ 		
+		if(chk){
+			$.cookie('promotion', 'no',{expires:1}) //expires:1 은 하루동안 1이 날짜
+			window.close();
+		}else{
+			window.close();
+		}
+	})
+})
+</script>
 </head>
 <body>
 <img alt="" src="./images/image.jpg"><br/>

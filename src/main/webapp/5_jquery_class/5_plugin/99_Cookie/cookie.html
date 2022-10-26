@@ -7,6 +7,20 @@
 <script type="text/javascript"   src="js/jquery.cookie.js"></script>
 <script type="text/javascript">
 
+	// 쿠키(cookie) : 웹클라이언트(웹브라우저)에 사용자 정보를 저장
+	$(function(){
+		
+		// 화면시작시 쿠키 가져오기
+		var c = $.cookie('myemail');
+		$('#txtMail').val(c);
+		
+		//'송신'버튼이 눌렸을때 -> 쿠키저장
+		$('#btnSave').click(function(){
+			$.cookie('myemail', $('#txtMail').val(),{expires:1})
+			$('#txtMail').val('')
+		})
+	
+	})
 </script>
 </head>
 <body>
