@@ -4,6 +4,28 @@
 	<meta charset="UTF-8">
 	<title> 파라메터 인자</title>
 	<script>
+		// 1.함수의 인자로 기본형 (call by value)
+		// call by value : 함수 호출시 넘기는 인자의 값이 매개 변수에 복사 되어 
+		//  	함수 내에서 매개변수에 직접적인 조작을 가해도 인자에 영향을 주지않는것
+		//		값 = 주소값 X 그자체로 유의미한 데이터
+		
+		var pri = 10;
+		function priParam(pri){
+			pri--;
+			return pri;
+		}
+		document.write('1> 기본형 인자 : '+priParam(pri)+'<br/>');
+		document.write('2> 기본형 인자 : ' + pri +'<br/>');
+		
+		// 2. 함수의 인자로 참조형 (call by reference)
+		// call by reference : 복사되는값이 주소값 -> 참조값으로 함수를 호출했다
+		var ref = [1,2,3,4,5];
+		function refParam(ref){
+			ref.pop(); //pop = 가장마지막에 들어간값 뺴는거 - > 1 2 3 4
+			return ref;
+		}
+		document.write('1> 참조형 인자 : '+ refParam(ref)+'<br/>')
+		document.write('2> 참조형 인자 : '+ ref+'<br/>')
 
 	</script>
 </head>

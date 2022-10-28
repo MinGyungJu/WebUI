@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>jquery filter</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+	 
+	//$('선택자').addClass('클래스명');
+	
+	// 1) 각종류의 첫번째 요소 선택 (떡볶이, 와인)
+ 	$('li:nth-child(1)').addClass('bg');
+ 	// 2) 음식중에서 세번째 요소 선택
+ 	$('#food > li:nth-child(3)').addClass('border');
+ 	// 3) '튀김'을 포함하는 요소 선택
+ 	$('#food > li:contains("튀김")').addClass('borderRed');
+ 	// 4) 술 종류중 두번째 요소 선택
+//  $('ul:eq(1) > li:nth-child(2)').addClass('borderBlue');
+ 	$('ul').filter('ul:eq(1)').find('li:eq(1)').addClass('borderBlue');
+ })
+ </script>
 <!--4. class 속성제어 -->
 <style type="text/css">
 	.bg { background : yellow; }

@@ -13,6 +13,28 @@
 //			아무튼 클로저를 이용하여 전역변수의 사용을 줄일 수 있다
 
 
+
+//------ 함수 선언
+		  function add(a,b,c){
+			var result = a + b;
+			c(result)
+			return function(){
+						result++;
+						return '공유결과?'+result;
+				};
+		 }
+		
+		//------ 함수 호출
+		var resultVar = add(10,20,function(res){
+										document.write('결과 : '+res+'<br/>')
+										}); 
+		document.write('리턴결과:'+resultVar()+'<hr/>');
+		document.write('리턴결과:'+resultVar()+'<hr/>');
+		document.write('리턴결과:'+resultVar()+'<hr/>');
+		result = 1000000000000;
+		document.write('리턴결과2:'+resultVar()+'<hr/>');
+
+
 </script>
 </head>
 <body>

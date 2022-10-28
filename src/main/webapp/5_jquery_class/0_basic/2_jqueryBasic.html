@@ -38,6 +38,54 @@ $(function(){
 	
 	$('#changeGrim').attr('src',src.replace('puppy','cat')	)
 	
+	//4 
+	/*
+		<요소 속성 = '값'>문자</요소>
+		
+		-text() : 태그사이의 문자를 가져오거나 지정하는 함수
+		-html() : 태그사이의 문자를 가져오거나 html요소로 인식하여 지정하는 함수
+		-attr() : 태그 안에 속성값을 가져오거나 지정하는 함수
+		
+		* val() :사용자 입력값이나 선택값을 가져오거나 지정할 떄 
+				-> value 속성
+		
+		*/
+		$('#tf').val('여기에 이름');
+		$('#ta').val('설명을 합니다');
+		$('#sel').val('incheon');
+		$('#sel_m').val(['seom1','seom3']);	//multiple 은 배열로 선언 val(['값 , '값])
+		
+		//5. 동적 요소 생성하거나 이동할 떄
+		// 		부모요소.append(자식요소);
+		//		자식요소.appendTo(부모요소);
+		var actor = $('#actor');
+		var tae = $('#tae');
+		var su = $('#su');
+		var bin = $('#bin');
+		
+		actor.append(tae);	// 액터의 자식으로 태를 넣음
+		su.appendTo(actor); // 수를 부모의 액터로
+		
+		actor.append('<div id = "han">한배우</div>');
+		
+		var n = $('<div/>');
+		n.text('두배우');
+		n.attr('id','du');
+		n.appendTo(actor);
+		
+		//6. 클릭했을떄 선택한것의 이름이 나오게하기
+		// .click = 클릭했을떄 함수
+		// 각각의 것을 선택했을떄를 의미하는 $(this)
+		// each 를 쓰면 훨씬더 명확해진다
+		
+		$('.data').each(function(){
+			$(this).click(function(){
+				alert($(this).text())
+			})
+		})
+		
+		
+		
 })
 
 </script>

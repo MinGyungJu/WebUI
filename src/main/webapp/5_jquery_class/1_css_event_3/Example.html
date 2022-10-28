@@ -3,6 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title> 제이쿼리 이벤트 연습 </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$('button:contains("+")').click(function(){
+		$('#txt').css({
+			'font-size' : '+=15px'
+		});
+	})
+	
+	$('button:contains("-")').click(function(){
+		$('#txt').css({
+			'font-size' : '-=15px'
+		});
+	});
+	
+	$('#fontstyle').change(function(){
+	      $('#txt').css({
+	    	  'font-family' : $(this).val()
+	    	  }); 
+	    });
+	
+
+})
+</script>
 </head>
 <body>
 

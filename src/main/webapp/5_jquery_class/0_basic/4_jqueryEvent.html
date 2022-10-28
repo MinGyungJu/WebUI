@@ -8,6 +8,40 @@
 	.bg { background : yellow; }
 	.border { border : 3px dotted red; }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	
+	$('li').css({'cursor':'pointer'}) //커서 댔을때 손가락표시나옴
+	
+	// 원래이벤트 연결 함수 : bing() / one()	-> one은 한번만 선택가능
+	$('li').bind('click',function(){
+		//var liTxt = $(this).text()	// 제이쿼리 코드
+		var liTxt = this.lnnerHTML;  // 자바스크립트코드
+		$('#result').text(liTxt);
+	})
+	
+// 	$('li').click('click',function(){
+// 		$('#result').text($(this).text());
+// 	})
+
+//------------------------
+	// $('ul')	: 기존의 ul객체를 찾는것
+	// $('<ul>') 	: 아직없는상태인 ul을 만드는것
+	$('h1').bind('click',function(){
+		var n = $('<li/>').text(new Date());
+		$('ul').append(n);
+	})
+	//동적으로 생성된 요소에는 이벤트가 발생하지않음
+	$('ul').on('click','li',function(){		// li 라는 애가 click 됬을 때 function 한다
+		$('#result').text($(this).text());
+	});
+	
+	
+})
+
+</script>
 
 </head>
 <body>
