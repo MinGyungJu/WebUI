@@ -1,5 +1,4 @@
 $(function(){
-	
 	//1
 	$('.year').text(new Date().getFullYear());
 	$('.month').text(new Date().getMonth()+1);
@@ -13,7 +12,6 @@ $(function(){
 		$(this).css("background-position","0 0");
 	})
 	// (3) 탭팬 구현 (10점)
-	   
 	$('#tabmenu dt').click(function(){
 		
 		$('#tabmenu dd').hide();		
@@ -29,7 +27,6 @@ $(function(){
 		
 		});
 	// (4)
-	 
       var slider = $('#best_bg>ul').bxSlider({
    			auto:true,
    		 	pager: true,
@@ -67,18 +64,24 @@ $(function(){
    $('#total_close > a > img').click(function(){
       $('#total_menu').hide();
    })
-   
-	
-         
-         
-         
-         
-         
-         
+   // 7 . 추가기능 만들기
+   	// (1). 줌인, 줌아웃 버튼
+   	$(".zoom_in").click(function(){
+       updateZoom(0.25);
+      })   
+  	 $(".zoom_out").click(function(){
+       updateZoom(-0.25);
+      })   
+    zoomLevel = 1;
+	var updateZoom = function(zoom) {
+  	zoomLevel += zoom;
+   	$('body').css({
+					 zoom			 : zoomLevel, 
+					 '-moz-transform': 'scale(' + zoomLevel + ')' 
+				  });
+	} 
+	// (2) 인쇄하기 버튼 눌릴시 인쇄페이지나오기
+	$('.print_btn').click(function(){
+		window.print();
+	})  
 });
-	
-		
-	
-
-	
-	
